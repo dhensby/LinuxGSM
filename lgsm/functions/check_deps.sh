@@ -352,7 +352,7 @@ if [ -f "${datadir}/${distroid}-${distroversioncsv}.csv" ]; then
 	fn_check_loop
 # Warn the user that dependency checking is unavailable for their distro.
 elif [ "${commandname}" == "INSTALL" ]||[ -n "${checkflag}" ]&&[ "${checkflag}" != "0" ]; then
-	fn_print_warning_nl "LinuxGSM dependency checking currently unavailable for ${distroname}."
+	fn_print_warning_nl "LinuxGSM dependency checking currently unavailable for ${datadir}/${distroid}-${distroversioncsv}.csv ."
 	# Prevent future dependency checking if unavailable for the distro.
 	echo "${version}" > "${tmpdir}/dependency-no-check.tmp"
 elif 	[ -f "${tmpdir}/dependency-no-check.tmp" ]; then
